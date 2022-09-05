@@ -7,6 +7,4 @@ RUN apt update && apt upgrade -y && \
 
 RUN mkdir -p /opt/openstack-image-manager ; git clone https://github.com/osism/openstack-image-manager.git /opt/openstack-image-manager
 
-COPY etc/ /opt/openstack-image-manager/etc/
-
 WORKDIR /opt/openstack-image-manager
