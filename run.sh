@@ -4,9 +4,12 @@
 #
 # 2022-09-05 Christian Stelter
 
-CLOUDS_YAML=${CLOUDS_YAML:-clouds.yaml}
+CLOUDS=${CLOUDS:-clouds.yaml}
 IMAGES=${IMAGES:-etc/images/}
+
+# replace with your container registry path
+RUNNER_IMAGE=oim-runner:dev
 
 echo "Using $CLOUDS_YAML and $IMAGES for oim-runner..."
 
-docker run --rm -v $CLOUDS_YAML:/opt/openstack-image-manager/clouds.yml -v $IMAGES_DIR:/opt/openstack-image-manager/etc/images oim-runner:dev tox $@
+docker run --rm -v $CLOUDS:/opt/openstack-image-manager/clouds.yml -v $IMAGES:/opt/openstack-image-manager/etc/images $RUNNER_IMAGE tox $@
