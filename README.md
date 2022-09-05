@@ -21,9 +21,9 @@ If you are using your own onsite container registry, push the container in the a
 repositiory and set RUNNER_IMAGE accordingly.
 
 ```
-$ run.sh
+$ ./run.sh
 
 or with the required arguments (mind the dash dash - it's calling tox)
 
-$ run.sh -- --dry-run
+$ ./run.sh -- --dry-run
 ```
